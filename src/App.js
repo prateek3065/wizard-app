@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Header from "./Header.js";
+import { useState, useEffect } from "react";
+import Sample from "./Sample.js";
+import About from "./About.js";
+import Home from "./Home.js";
 function App() {
+  const [mode, setMode] = useState(() => {
+    return "home";
+  });
+  const [step, setStep] = useState(() => {
+    return "1";
+  });
+  function selectPage() {
+    if (mode !== "home") return null;
+    console.log("here");
+    return Home({ step, setStep });
+  }
+  useEffect(() => {
+    console.log(`mode is${mode}`);
+    setStep("1");
+  }, [mode]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header setMode={setMode} />
+      {selectPage()}
+      <Sample mode={mode} />
+      <About mode={mode} />
+    </>
   );
 }
 
