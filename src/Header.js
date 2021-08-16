@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 export default function header({ setMode }) {
-  function changeMode() {}
   return (
     <div
       style={{
