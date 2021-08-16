@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/wizard-app/static/css/main.973c3891.chunk.css",
+    "main.js": "/wizard-app/static/js/main.6f59d873.chunk.js",
+    "main.js.map": "/wizard-app/static/js/main.6f59d873.chunk.js.map",
+    "runtime-main.js": "/wizard-app/static/js/runtime-main.92b01df1.js",
+    "runtime-main.js.map": "/wizard-app/static/js/runtime-main.92b01df1.js.map",
+    "static/js/2.266d75c2.chunk.js": "/wizard-app/static/js/2.266d75c2.chunk.js",
+    "static/js/2.266d75c2.chunk.js.map": "/wizard-app/static/js/2.266d75c2.chunk.js.map",
+    "index.html": "/wizard-app/index.html",
+    "static/css/main.973c3891.chunk.css.map": "/wizard-app/static/css/main.973c3891.chunk.css.map",
+    "static/js/2.266d75c2.chunk.js.LICENSE.txt": "/wizard-app/static/js/2.266d75c2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.92b01df1.js",
+    "static/js/2.266d75c2.chunk.js",
+    "static/css/main.973c3891.chunk.css",
+    "static/js/main.6f59d873.chunk.js"
+  ]
+}
