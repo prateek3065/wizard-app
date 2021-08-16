@@ -2,5 +2,11 @@ import React from "react";
 
 export default function About({ mode }) {
   if (mode !== "about") return null;
-  return <></>;
+  return (
+    <>
+      <div>
+        <h1>This is about</h1>
+      </div>
+    </>
+  );
 }

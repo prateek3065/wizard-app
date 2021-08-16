@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./App.css";
 export default function header({ setMode }) {
   function changeMode() {}
   return (
@@ -31,6 +31,7 @@ export default function header({ setMode }) {
         }}
       >
         <div
+          className="mode-buttons"
           onClick={() => {
             setMode("home");
           }}
@@ -38,6 +39,7 @@ export default function header({ setMode }) {
           Home
         </div>
         <div
+          className="mode-buttons"
           onClick={() => {
             setMode("sample");
           }}
@@ -45,6 +47,7 @@ export default function header({ setMode }) {
           Sample
         </div>
         <div
+          className="mode-buttons"
           onClick={() => {
             setMode("about");
           }}

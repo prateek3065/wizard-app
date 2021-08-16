@@ -9,3 +9,6 @@
   height: 30px;
   margin: 10px;
 }
+.mode-buttons:hover {
+  cursor: pointer;
+}
