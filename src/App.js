@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Sample from "./Sample.js";
 import About from "./About.js";
 import Home from "./Home.js";
+import { Container, Form, Button } from "react-bootstrap";
 function App() {
   const [mode, setMode] = useState(() => {
     return "home";
