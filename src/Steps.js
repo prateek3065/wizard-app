@@ -79,14 +79,14 @@ export default function Steps({ step, setStep, isModalOpen, setModalOpen }) {
     }
     return (
       <Container>
-        <Form>
+        <Form style={{ marginTop: "8px" }}>
           <Form.Group>
             <Form.Label>{q}</Form.Label>
             <Form.Control type="text" required></Form.Control>
             <Form.Label>Password</Form.Label>
             <Form.Control type="text" required></Form.Control>
           </Form.Group>
-          <Form.Group>
+          <Form.Group style={{ marginTop: "8px" }}>
             <Button className="btn" onClick={handleSubmit} type="submit">
               LogIn
             </Button>
@@ -102,7 +102,7 @@ export default function Steps({ step, setStep, isModalOpen, setModalOpen }) {
       // e.preventDefault();
     }
     if (signInMethod === "facebook") {
-      return FaceBookModal(isModalOpen, setModalOpen);
+      return FaceBookModal(isModalOpen, setModalOpen, setStep);
     }
     return (
       <Container>
@@ -122,16 +122,16 @@ export default function Steps({ step, setStep, isModalOpen, setModalOpen }) {
       </Container>
     );
   }
-  if (step === "1") return twoChild("Are you Business Owner", true);
-  else if (step === "11") return twoChild("Located in US", true);
-  else if (step === "10") return twoChild("LogIn with faceBook", true);
-  else if (step === "111") return twoChild("Large Corporation", true);
-  else if (step === "110") return twoChild("Access Denied", false);
+  if (step === "1") return twoChild("Are you Business Owner ?", true);
+  else if (step === "11") return twoChild("Located in US ?", true);
+  else if (step === "10") return twoChild("LogIn with faceBook ?", true);
+  else if (step === "111") return twoChild("Large Corporation ?", true);
+  else if (step === "110") return twoChild("Access Denied !!", false);
   else if (step === "101") return signIn("Fb logIn widget", "facebook");
   else if (step === "100")
     return signIn("Email signIn form", "small corporation");
   else if (step === "1111")
-    return twoChild("Interested in Taking survey", true);
+    return twoChild("Interested in Taking survey ?", true);
   else if (step === "1110")
     return twoChild("Contracted with lasge Corporation ?", true);
   else if (
