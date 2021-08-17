@@ -54,6 +54,10 @@ export default function Steps({ step, setStep }) {
     );
   }
   function signUp(q) {
+    function handleSubmit(e) {
+      console.log("inside signUp");
+      // e.preventDefault();
+    }
     return (
       <Container>
         <Form>
@@ -62,7 +66,30 @@ export default function Steps({ step, setStep }) {
             <Form.Control type="text" required></Form.Control>
             <Form.Label>Password</Form.Label>
             <Form.Control type="text" required></Form.Control>
-            <Button type="submit">LogIn</Button>
+            <Button onClick={handleSubmit} type="submit">
+              LogIn
+            </Button>
+          </Form.Group>
+        </Form>
+      </Container>
+    );
+  }
+  function signIn(q) {
+    function handleSubmit(e) {
+      console.log("inside sign in");
+      // e.preventDefault();
+    }
+    return (
+      <Container>
+        <Form>
+          <Form.Group>
+            <Form.Label>{q}</Form.Label>
+            <Form.Control type="text" required></Form.Control>
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="text" required></Form.Control>
+            <Button onClick={handleSubmit} type="submit">
+              LogIn
+            </Button>
           </Form.Group>
         </Form>
       </Container>
@@ -73,8 +100,9 @@ export default function Steps({ step, setStep }) {
   else if (step === "10") return twoChild("LogIn with faceBook", true);
   else if (step === "111") return twoChild("Large Corporation", true);
   else if (step === "110") return twoChild("Access Denied", false);
-  else if (step === "101") return oneChild("Fb logIn widget");
-  else if (step === "100") return oneChild("Email signIn form");
+  else if (step === "101") return signIn("Fb logIn widget");
+  else if (step === "100")
+    return signIn("Email signIn form", "small corporation");
   else if (step === "1111")
     return twoChild("Interested in Taking survey", true);
   else if (step === "1110")
