@@ -16,12 +16,22 @@ export default function Steps({ step, setStep }) {
   }
   function twoChild(q, flag) {
     return (
-      <Container>
-        <Form>
+      <Container
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          height: "50vh",
+          alignItems: "center",
+        }}
+      >
+        <Form style={{ width: "100%" }}>
           <Form.Group>
-            <Form.Label>{q}</Form.Label>
+            <Form.Label>
+              <h1>{q}</h1>
+            </Form.Label>
           </Form.Group>
-          {getButtons(flag)}
+          <Form.Group> {getButtons(flag)}</Form.Group>
         </Form>
       </Container>
     );
