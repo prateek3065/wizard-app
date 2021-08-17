@@ -1,4 +1,3 @@
-import React from "react";
 import Steps from "./Steps";
 export default function Home({ step, setStep }) {
   console.log(step);

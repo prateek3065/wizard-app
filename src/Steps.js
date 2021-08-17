@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+//import React, { useState } from "react";
 import "./App.css";
 import { Container, Form, Button } from "react-bootstrap";
-import useLocalStorege from "./hooks/useLocalStorage.js";
+//import useLocalStorege from "./hooks/useLocalStorage.js";
 export default function Steps({ step, setStep }) {
-  const [credentials, setCredentials] = useLocalStorege();
+  //const [credentials, setCredentials] = useLocalStorege();
   function getButtons(flag) {
     if (flag)
       return (
