@@ -11,10 +11,13 @@ function App() {
   const [step, setStep] = useState(() => {
     return "1";
   });
+  const [isModalOpen, setModalOpen] = useState(() => {
+    return true;
+  });
   function selectPage() {
     if (mode !== "home") return null;
     console.log("here");
-    return Home({ step, setStep });
+    return Home({ step, setStep, isModalOpen, setModalOpen });
   }
   useEffect(() => {
     console.log(`mode is${mode}`);

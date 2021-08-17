@@ -1,8 +1,9 @@
 //import React, { useState } from "react";
 import "./App.css";
 import { Container, Form, Button } from "react-bootstrap";
+import FaceBookModal from "./FaceBookModal";
 //import useLocalStorege from "./hooks/useLocalStorage.js";
-export default function Steps({ step, setStep }) {
+export default function Steps({ step, setStep, isModalOpen, setModalOpen }) {
   //const [credentials, setCredentials] = useLocalStorege();
   function getButtons(flag) {
     if (flag)
@@ -84,10 +85,14 @@ export default function Steps({ step, setStep }) {
       </Container>
     );
   }
-  function signIn(q) {
+  function signIn(q, signInMethod) {
+    console.log(signInMethod);
     function handleSubmit(e) {
       console.log("inside sign in");
       // e.preventDefault();
+    }
+    if (signInMethod === "facebook") {
+      return FaceBookModal(isModalOpen, setModalOpen);
     }
     return (
       <Container>
@@ -110,9 +115,9 @@ export default function Steps({ step, setStep }) {
   else if (step === "10") return twoChild("LogIn with faceBook", true);
   else if (step === "111") return twoChild("Large Corporation", true);
   else if (step === "110") return twoChild("Access Denied", false);
-  else if (step === "101") return signIn("Fb logIn widget");
+  else if (step === "101") return signIn("Fb logIn widget", "facebook");
   else if (step === "100")
-    return signIn("Email signIn form", "small corporation");
+    return signIn("Email signIn form", "small corporation", "email");
   else if (step === "1111")
     return twoChild("Interested in Taking survey", true);
   else if (step === "1110")
