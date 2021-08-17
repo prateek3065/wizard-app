@@ -6,8 +6,11 @@
   align-items: center;
 }
 .btn {
-  height: 30px;
-  margin: 10px;
+  display: inline-flex;
+  justify-content: center; /* center the content horizontally */
+  align-items: center;
+  border-color: transparent;
+  margin-right: 8px;
 }
 .mode-buttons:hover {
   cursor: pointer;

@@ -12,7 +12,9 @@ export default function FaceBookModal(isModalOpen, setModalOpen) {
             <Form.Label>Password</Form.Label>
             <Form.Control type="text" required />
           </Form.Group>
-          <Button type="submit">Submit</Button>
+          <Form.Group style={{ marginTop: "8px" }}>
+            <Button type="submit">Submit</Button>
+          </Form.Group>
         </Form>
       </Modal.Body>
     </Modal>

@@ -9,8 +9,12 @@ export default function Steps({ step, setStep, isModalOpen, setModalOpen }) {
     if (flag)
       return (
         <>
-          <Button onClick={() => setStep((prev) => prev + 1)}>Yes</Button>
-          <Button onClick={() => setStep((prev) => prev + 0)}>No</Button>
+          <Button className="btn" onClick={() => setStep((prev) => prev + 1)}>
+            Yes
+          </Button>
+          <Button className="btn" onClick={() => setStep((prev) => prev + 0)}>
+            No
+          </Button>
         </>
       );
     return <></>;
@@ -46,7 +50,11 @@ export default function Steps({ step, setStep, isModalOpen, setModalOpen }) {
             <Form.Control type="text" required></Form.Control>
             <Form.Label>Password</Form.Label>
             <Form.Control type="text" required></Form.Control>
-            <Button type="submit">LogIn</Button>
+          </Form.Group>
+          <Form.Group>
+            <Button className="btn" type="submit">
+              LogIn
+            </Button>
           </Form.Group>
         </Form>
       </Container>
@@ -77,7 +85,9 @@ export default function Steps({ step, setStep, isModalOpen, setModalOpen }) {
             <Form.Control type="text" required></Form.Control>
             <Form.Label>Password</Form.Label>
             <Form.Control type="text" required></Form.Control>
-            <Button onClick={handleSubmit} type="submit">
+          </Form.Group>
+          <Form.Group>
+            <Button className="btn" onClick={handleSubmit} type="submit">
               LogIn
             </Button>
           </Form.Group>
@@ -96,13 +106,15 @@ export default function Steps({ step, setStep, isModalOpen, setModalOpen }) {
     }
     return (
       <Container>
-        <Form>
+        <Form style={{ marginTop: "20px" }}>
           <Form.Group>
             <Form.Label>{q}</Form.Label>
             <Form.Control type="text" required></Form.Control>
             <Form.Label>Password</Form.Label>
             <Form.Control type="text" required></Form.Control>
-            <Button onClick={handleSubmit} type="submit">
+          </Form.Group>
+          <Form.Group style={{ marginTop: "8px" }}>
+            <Button className="btn" onClick={handleSubmit} type="submit">
               LogIn
             </Button>
           </Form.Group>
@@ -117,7 +129,7 @@ export default function Steps({ step, setStep, isModalOpen, setModalOpen }) {
   else if (step === "110") return twoChild("Access Denied", false);
   else if (step === "101") return signIn("Fb logIn widget", "facebook");
   else if (step === "100")
-    return signIn("Email signIn form", "small corporation", "email");
+    return signIn("Email signIn form", "small corporation");
   else if (step === "1111")
     return twoChild("Interested in Taking survey", true);
   else if (step === "1110")
