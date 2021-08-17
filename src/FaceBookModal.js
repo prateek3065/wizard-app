@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Form, Button, Container, Modal } from "react-bootstrap";
+import React from "react";
+import { Form, Button, Modal } from "react-bootstrap";
 export default function FaceBookModal(isModalOpen, setModalOpen) {
   return (
     <Modal show={isModalOpen}>
