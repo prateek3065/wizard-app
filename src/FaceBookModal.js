@@ -1,9 +1,17 @@
 import React from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 export default function FaceBookModal(isModalOpen, setModalOpen, setStep) {
+  function handleSubmit(e) {
+    e.preventDefault();
+    setStep("111");
+  }
+  function closeModal() {
+    setStep("10");
+    setModalOpen(false);
+  }
   return (
-    <Modal show={isModalOpen}>
-      <Modal.Header>Facebook LogIn</Modal.Header>
+    <Modal show={isModalOpen} onHide={closeModal}>
+      <Modal.Header closeButton>Facebook LogIn</Modal.Header>
       <Modal.Body>
         <Form>
           <Form.Group>
@@ -13,12 +21,7 @@ export default function FaceBookModal(isModalOpen, setModalOpen, setStep) {
             <Form.Control type="text" required />
           </Form.Group>
           <Form.Group style={{ marginTop: "8px" }}>
-            <Button
-              onClick={() => {
-                setStep("111");
-              }}
-              type="submit"
-            >
+            <Button onClick={handleSubmit} type="submit">
               Submit
             </Button>
           </Form.Group>

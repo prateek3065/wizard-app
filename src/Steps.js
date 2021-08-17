@@ -1,18 +1,21 @@
-//import React, { useState } from "react";
 import "./App.css";
 import { Container, Form, Button } from "react-bootstrap";
 import FaceBookModal from "./FaceBookModal";
-//import useLocalStorege from "./hooks/useLocalStorage.js";
 export default function Steps({ step, setStep, isModalOpen, setModalOpen }) {
-  //const [credentials, setCredentials] = useLocalStorege();
-  function getButtons(flag) {
+  function getButtons(flag, q) {
+    function handleYesClick() {
+      setStep((prev) => prev + 1);
+      if (q === "LogIn with faceBook ?") {
+        setModalOpen(true);
+      }
+    }
     if (flag)
       return (
         <>
-          <Button className="btn" onClick={() => setStep((prev) => prev + 1)}>
+          <Button className="btn" onClick={() => handleYesClick()}>
             Yes
           </Button>
-          <Button className="btn" onClick={() => setStep((prev) => prev + 0)}>
+          <Button className="btn" onClick={() => setStep((prev) => prev + "0")}>
             No
           </Button>
         </>
@@ -36,46 +39,15 @@ export default function Steps({ step, setStep, isModalOpen, setModalOpen }) {
               <h1>{q}</h1>
             </Form.Label>
           </Form.Group>
-          <Form.Group> {getButtons(flag)}</Form.Group>
+          <Form.Group> {getButtons(flag, q)}</Form.Group>
         </Form>
       </Container>
     );
   }
-  function oneChild(q) {
-    return (
-      <Container>
-        <Form>
-          <Form.Group>
-            <Form.Label>{q}</Form.Label>
-            <Form.Control type="text" required></Form.Control>
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="text" required></Form.Control>
-          </Form.Group>
-          <Form.Group>
-            <Button className="btn" type="submit">
-              LogIn
-            </Button>
-          </Form.Group>
-        </Form>
-      </Container>
-    );
-  }
-  function specialChild(q) {
-    return (
-      <Container>
-        <Form>
-          <Form.Group>
-            <Form.Label>{q}</Form.Label>
-            <Form.Control type="text"></Form.Control>
-          </Form.Group>
-        </Form>
-      </Container>
-    );
-  }
+
   function signUp(q) {
     function handleSubmit(e) {
-      console.log("inside signUp");
-      // e.preventDefault();
+      e.preventDefault();
     }
     return (
       <Container>
@@ -88,7 +60,7 @@ export default function Steps({ step, setStep, isModalOpen, setModalOpen }) {
           </Form.Group>
           <Form.Group style={{ marginTop: "8px" }}>
             <Button className="btn" onClick={handleSubmit} type="submit">
-              LogIn
+              SignUp
             </Button>
           </Form.Group>
         </Form>
@@ -96,10 +68,9 @@ export default function Steps({ step, setStep, isModalOpen, setModalOpen }) {
     );
   }
   function signIn(q, signInMethod) {
-    console.log(signInMethod);
     function handleSubmit(e) {
-      console.log("inside sign in");
-      // e.preventDefault();
+      e.preventDefault();
+      setStep("111");
     }
     if (signInMethod === "facebook") {
       return FaceBookModal(isModalOpen, setModalOpen, setStep);
@@ -114,7 +85,11 @@ export default function Steps({ step, setStep, isModalOpen, setModalOpen }) {
             <Form.Control type="text" required></Form.Control>
           </Form.Group>
           <Form.Group style={{ marginTop: "8px" }}>
-            <Button className="btn" onClick={handleSubmit} type="submit">
+            <Button
+              className="btn"
+              onClick={(e) => handleSubmit(e)}
+              type="submit"
+            >
               LogIn
             </Button>
           </Form.Group>
@@ -133,25 +108,10 @@ export default function Steps({ step, setStep, isModalOpen, setModalOpen }) {
   else if (step === "1111")
     return twoChild("Interested in Taking survey ?", true);
   else if (step === "1110")
-    return twoChild("Contracted with lasge Corporation ?", true);
-  else if (
-    step === "1011" ||
-    step === "1001" ||
-    step === "1010" ||
-    step === "1000"
-  )
-    return specialChild("Detect If Corporate Email");
+    return twoChild("Contracted with large Corporation ?", true);
   else if (step === "11110" || step === "11111")
     return signUp("Large Corporation Sign Up form");
   else if (step === "11101")
     return twoChild("User must contact Large Corporation", false);
-  else if (step === "11100")
-    return twoChild("Small Corporation Sign up form", false);
-  else if (
-    step === "1011" ||
-    step === "1010" ||
-    step === "1001" ||
-    step === "1000"
-  )
-    return oneChild("Detect if Corporate Email");
+  else if (step === "11100") return signUp("Small Corporation SignUp form");
 }
