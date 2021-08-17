@@ -1,20 +1,23 @@
 {
   "files": {
     "main.css": "/wizard-app/static/css/main.8e4983b3.chunk.css",
-    "main.js": "/wizard-app/static/js/main.b11ef9a0.chunk.js",
-    "main.js.map": "/wizard-app/static/js/main.b11ef9a0.chunk.js.map",
+    "main.js": "/wizard-app/static/js/main.70eb531d.chunk.js",
+    "main.js.map": "/wizard-app/static/js/main.70eb531d.chunk.js.map",
     "runtime-main.js": "/wizard-app/static/js/runtime-main.92b01df1.js",
     "runtime-main.js.map": "/wizard-app/static/js/runtime-main.92b01df1.js.map",
-    "static/js/2.c79dfe41.chunk.js": "/wizard-app/static/js/2.c79dfe41.chunk.js",
-    "static/js/2.c79dfe41.chunk.js.map": "/wizard-app/static/js/2.c79dfe41.chunk.js.map",
+    "static/css/2.da1eef19.chunk.css": "/wizard-app/static/css/2.da1eef19.chunk.css",
+    "static/js/2.5fd3c273.chunk.js": "/wizard-app/static/js/2.5fd3c273.chunk.js",
+    "static/js/2.5fd3c273.chunk.js.map": "/wizard-app/static/js/2.5fd3c273.chunk.js.map",
     "index.html": "/wizard-app/index.html",
+    "static/css/2.da1eef19.chunk.css.map": "/wizard-app/static/css/2.da1eef19.chunk.css.map",
     "static/css/main.8e4983b3.chunk.css.map": "/wizard-app/static/css/main.8e4983b3.chunk.css.map",
-    "static/js/2.c79dfe41.chunk.js.LICENSE.txt": "/wizard-app/static/js/2.c79dfe41.chunk.js.LICENSE.txt"
+    "static/js/2.5fd3c273.chunk.js.LICENSE.txt": "/wizard-app/static/js/2.5fd3c273.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.92b01df1.js",
-    "static/js/2.c79dfe41.chunk.js",
+    "static/css/2.da1eef19.chunk.css",
+    "static/js/2.5fd3c273.chunk.js",
     "static/css/main.8e4983b3.chunk.css",
-    "static/js/main.b11ef9a0.chunk.js"
+    "static/js/main.70eb531d.chunk.js"
   ]
 }
